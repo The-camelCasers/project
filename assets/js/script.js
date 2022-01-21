@@ -1,4 +1,8 @@
+// global variables
+
 // create formn where user inputs zipcode
+
+// functions
 
 // create submit button to send zipcode
 // create function to obtain weather
