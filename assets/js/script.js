@@ -36,7 +36,16 @@ function displayResults(results) {
 
 }
 
+function suggestResponse() {
+    document.getElementById(ifResponse).innerHTML = "";
+    console.log("updated text should appear");
+    document.getElementById("ifResponse").innerHTML = "";
+}
 
+
+
+// event listeners
+submitBtn.addEventListener("click", handleResults);
 
 
 
@@ -70,9 +79,6 @@ function displayResults(results) {
 // create submit button to send zipcode
 // create function to obtain weather
 // based on weather send message with gif to determine whether or not umbrella is needed
-
-// event listeners
-submitBtn.addEventListener("click", handleResults);
 
 
 

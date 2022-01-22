@@ -3,3 +3,22 @@
 /* Create Layout */
 
 /* style guts of layout */
+
+body {
+    background-color: #ced1d6;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+}
+
+input {
+    background-color: white;
+    border: none;
+    border-radius: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 1rem;
+}
+
