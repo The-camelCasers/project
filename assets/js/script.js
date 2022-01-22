@@ -1,5 +1,7 @@
 // global variables
-const rainyTerm = ["light intensity drizzle"]
+const thunderStormDescription = ["Thunderstorm", "thunderstorm with light rain", "thunderstorm with rain", "thunderstorm with heavy rain", "light thunderstorm", "thunderstorm", "heavy thunderstorm", "ragged thunderstorm", "thunderstorm with light drizzle", "thunderstorm with drizzle", "thunderstorm with heavy drizzle"];
+const drizzleDescription = ["Drizzle", "light intensity drizzle", "drizzle", "heavy intensity drizzle", "light intensity drizzle rain", "drizzle rain", "heavy intensity drizzle rain", "shower rain and drizzle", "heavy shower rain and drizzle", "shower drizzle"];
+const rainDescription = ["Rain", "light rain", "moderate rain", "heavy intensity rain", "very heavy rain", "extreme rain", "freezing rain", "light intensity shower rain", "shower rain", "heavy intensity shower rain", "ragged shower rain"];
 
 // create form where user inputs zipcode
 // Button for zipcode input
@@ -8,38 +10,32 @@ const submitBtn = document.getElementById("zipCodeBtn");
 
 // functions
 function handleResults(event) {
-    event.preventDefault();
-    console.log("push button pushed");
-    // grab search text from input
-    const zipInput = document.getElementById("searchZip").value;
-    
-    // create fecth url
-    const fetchUrl = `http://api.openweathermap.org/data/2.5/weather?zip=${zipInput}&appid=0d38177c0e5e9ab3a9ccc614eb4acbe3` ;
+  event.preventDefault();
+  console.log("push button pushed");
+  // grab search text from input
+  const zipInput = document.getElementById("searchZip").value;
 
-    console.log("maybe you need an umbrella");
-    
-    fetch(fetchUrl)
+  // create fecth url
+  const fetchUrl = `http://api.openweathermap.org/data/2.5/weather?zip=${zipInput}&appid=0d38177c0e5e9ab3a9ccc614eb4acbe3`;
+
+  console.log("maybe you need an umbrella");
+
+  fetch(fetchUrl)
     .then(function (response) {
-        console.log()
-        return response.json();
+      console.log();
+      return response.json();
     })
     .then(function (data) {
-        console.log(data);
-        console.log(data.weather[0]);
-        displayResults(data.weather[0]);
-    }); 
+      console.log(data);
+      console.log(data.weather[0]);
+      displayResults(data.weather[0]);
+    });
 }
 
 function displayResults(results) {
-    document.getElementById("results").innerHTML = "";
-    document.getElementById("results").innerHTML = `<div>current weather:${results.description}</div>`;
-
+  document.getElementById("results").innerHTML = "";
+  document.getElementById("results").innerHTML = `<div>current weather:${results.description}</div>`;
 }
-
-
-
-
-
 
 /* function displayResults(results) {
     document.querySelector("#results").innerHTML = "";
@@ -66,16 +62,12 @@ function displayResults(results) {
 
 */
 
-
 // create submit button to send zipcode
 // create function to obtain weather
 // based on weather send message with gif to determine whether or not umbrella is needed
 
 // event listeners
 submitBtn.addEventListener("click", handleResults);
-
-
-
 
 /* global variable
 
@@ -117,5 +109,3 @@ if (myParam.length > 0) {
 }
 console.log(myParam); 
 */
-
-
