@@ -3,6 +3,8 @@ const thunderStormDescription = ["Thunderstorm", "thunderstorm with light rain",
 const drizzleDescription = ["Drizzle", "light intensity drizzle", "drizzle", "heavy intensity drizzle", "light intensity drizzle rain", "drizzle rain", "heavy intensity drizzle rain", "shower rain and drizzle", "heavy shower rain and drizzle", "shower drizzle"];
 const rainDescription = ["Rain", "light rain", "moderate rain", "heavy intensity rain", "very heavy rain", "extreme rain", "freezing rain", "light intensity shower rain", "shower rain", "heavy intensity shower rain", "ragged shower rain"];
 
+const outcomeDescription = thunderStormDescription.concat(drizzleDescription, rainDescription);
+
 // create form where user inputs zipcode
 // Button for zipcode input
 
@@ -33,8 +35,18 @@ function handleResults(event) {
 }
 
 function displayResults(results) {
+  // clear existing string
   document.getElementById("results").innerHTML = "";
-  document.getElementById("results").innerHTML = `<div>current weather:${results.description}</div>`;
+  // loop through array to find outcome term
+  const isRaining = outcomeDescription.includes(results.description);
+  /*for (let index = 0; index < outcomeDescription.length; index++) {
+    const arrayTerm = outcomeDescription[index];
+    */
+  if (isRaining === true) {
+    document.getElementById("results").innerHTML = `<div> The current weather is:${results.description} You need an umbrella!</div>`;
+  } else {
+    document.getElementById("results").innerHTML = `<div> The current weather is:${results.description} You do not need an umbrella!</div>`;
+  }
 }
 
 /* function displayResults(results) {
