@@ -83,11 +83,11 @@ function displayResults(results) {
   if (isRaining === true) {
     document.getElementById(
       "results"
-    ).innerHTML = `<div> The current weather is:${results.description} You need an umbrella!</div>`;
+    ).innerHTML = `<div> The current weather is : ${results.description} You need an umbrella!</div>`;
   } else {
     document.getElementById(
       "results"
-    ).innerHTML = `<div> The current weather is:${results.description} You do not need an umbrella!</div>`;
+    ).innerHTML = `<div> The current weather is : ${results.description} You do not need an umbrella!</div>`;
   }
   getGif();
 }
