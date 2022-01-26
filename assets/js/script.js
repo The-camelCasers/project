@@ -17,7 +17,7 @@ function handleResults(event) {
     displayError();
   } else {
     // create fecth url
-    const fetchUrl = `http://api.openweathermap.org/data/2.5/weather?zip=${zipInput}&appid=0d38177c0e5e9ab3a9ccc614eb4acbe3`;
+    const fetchUrl = `https://api.openweathermap.org/data/2.5/weather?zip=${zipInput}&appid=0d38177c0e5e9ab3a9ccc614eb4acbe3`;
     // fetch
     fetch(fetchUrl)
       .then(function (response) {
@@ -72,7 +72,7 @@ function displayError() {
 // Giphy API
 function getGif(searchTerm) {
   // create fetch url
-  const fetchUrl = `http://api.giphy.com/v1/gifs/search?api_key=mEZ23vb42atGwQvVFV5MzgHdLaT0TrKX&q=${searchTerm}`;
+  const fetchUrl = `https://api.giphy.com/v1/gifs/search?api_key=mEZ23vb42atGwQvVFV5MzgHdLaT0TrKX&q=${searchTerm}`;
   // fetch
   fetch(fetchUrl)
     .then(function (response) {
