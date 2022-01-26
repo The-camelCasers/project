@@ -8,7 +8,13 @@
 - [developers.giphy.com](https://developers.giphy.com/)
 - [Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API)
 
-When the site is opened, the user is presented with the header "Do You Need an Umbrella?". In the center of the screen is an input box with text "Enter yo zipcode", with a search button below. When the user enters a zip code and clicks the "Search" button, the current weather is displayed, along with whether or not the user needs an umbrella. A randomly picked gif in the theme of the current weather is displayed as the background image. If the zipcode box is left blank, or if a valid zip code is not entered, text will display asking the user to "Please enter a valid zip code.", and a randomly picked "error" gif will display as the background.
+The first time the app is opened in a browser, the user will see a pop up asking if they will allow or block location information.
+
+If the user clicks "Allow", they are presented with the header "Do You Need an Umbrella?". In the center of the screen is an input box with text "Enter yo zipcode", with a search button below. Beneath the search button will be a box displaying the current weather and whether or not the user needs an umbrella. A randomly picked gif in the theme of the current weather is displayed as the background image. The user can also manually enter a zip code and search for a location other than their own.
+
+If the user clicks "Block", they are presented with the header "Do You Need an Umbrella?". In the center of the screen is an input box with text "Enter yo zipcode", with a search button below. When the user enters a zip code and clicks the "Search" button, the current weather is displayed, along with whether or not the user needs an umbrella. A randomly picked gif in the theme of the current weather is displayed as the background image. If the zipcode box is left blank, or if a valid zip code is not entered, text will display asking the user to "Please enter a valid zip code.", and a randomly picked "error" gif will display as the background.
+
+There is a footer at the bottom of the page with links to the LinkedIn profiesl of all the developers.
 
 ## Screenshot if user allows geolocation
 
