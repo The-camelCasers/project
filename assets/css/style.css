@@ -1,5 +1,9 @@
 /* style by element */
 
+a {
+  justify-content: center;
+}
+
 aside {
   padding: 3rem;
   display: flex;
