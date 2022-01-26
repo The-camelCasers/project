@@ -1,61 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Do You Need an Umbrella?</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-  </head>
 
-  <body>
-    <!-- header -->
-    <header>
-      <h1>Do You Need an Umbrella?</h1>
-    </header>
-    <div class="gif-bkg" id="gifBkg">
-      <!-- input for zip code -->
-      <div class="columns is-flex h-100">
-        <div>
-          <form class="form-div">
-            <!-- Input -->
-            <input type="text" id="searchZip" placeholder="Enter yo zipcode" />
-            <!-- Submit Button -->
-            <button class="sBtn" type="submit" id="zipCodeBtn">Search</button>
-            <div class="font-size" id="results"></div>
-          </form>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Do You Need an Umbrella?</title>
+  <!-- Link to Bulma -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
+  <!-- Link to our css -->
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
 
-          <!-- results page -->
-        </div>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Do You Need an Umbrella?</h1>
+  </header>
+
+  <!-- Div to display weather gif as background-->
+  <div class="gif-bkg" id="gifBkg">
+    <!-- Form and submit button-->
+    <div class="columns is-flex h-100">
+      <div>
+        <!-- Form -->
+        <form class="form-div">
+          <!-- Input -->
+          <input type="text" id="searchZip" placeholder="Enter yo zipcode" />
+          <!-- Submit Button -->
+          <button class="sBtn" type="submit" id="zipCodeBtn">Search</button>
+          <!-- Div where weather and umbrella results are displayed -->
+          <div class="font-size" id="results"></div>
+        </form>
       </div>
-
-      <!-- columns -->
-      <!-- left column- results -->
-      <!-- magic 8 ball feedback -->
-
-      <!-- right column- giphy match -->
-      <!-- refresh page/icon -->
-
-      <!-- footer w group name -->
     </div>
-    <footer>
-      <div class="">
-        <div class="row">
-          <div class="col-sm-4 col-md col-sm-4 col-12 col">
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="">
+      <div class="row">
+        <div class="col-sm-4 col-md col-sm-4 col-12 col">
           <h5 class="col_white_amrc">Visit The Camel Casers Linkedin!</h5>
         </div>
-        
-        <ul class="footer_ul2_amrc displayGrid pbox miw-50@lrg miw-100@sml">
-          <li class="card cardColor cursor pbox" ><img ><a class="fbd" href="https://www.linkedin.com/in/rachelehaddad/" target="_blank">Rachel Haddad</a></li>
-          <li class="card cardColor cursor pbox" ><img ><a class="fbd" href="https://www.linkedin.com/in/meegan-anderson-753634112/" target="_blank">Meegan Anderson</a></li>  
-          <li class="card cardColor cursor pbox" ><img ><a class="fbd" href="https://www.linkedin.com/in/joseph-palmisano-a2aa20210/" target="_blank">Joe Palmisano</a></li>
-          <li class="card cardColor cursor pbox" ><img ><a class="fbd" href="https://www.linkedin.com/in/guzmanjose86/" target="_blank">Jose Guzman</a></li>
-        </ul>
-        
-      </div>
-    </footer>
 
-    <script src="./assets/js/script.js"></script>
-  </body>
+        <ul class="footer_ul2_amrc displayGrid pbox miw-50@lrg miw-100@sml">
+          <li class="card cardColor cursor pbox"><img><a class="fbd" href="https://www.linkedin.com/in/rachelehaddad/"
+              target="_blank">Rachel Haddad</a></li>
+          <li class="card cardColor cursor pbox"><img><a class="fbd"
+              href="https://www.linkedin.com/in/meegan-anderson-753634112/" target="_blank">Meegan Anderson</a></li>
+          <li class="card cardColor cursor pbox"><img><a class="fbd"
+              href="https://www.linkedin.com/in/joseph-palmisano-a2aa20210/" target="_blank">Joe Palmisano</a></li>
+          <li class="card cardColor cursor pbox"><img><a class="fbd" href="https://www.linkedin.com/in/guzmanjose86/"
+              target="_blank">Jose Guzman</a></li>
+        </ul>
+      </div>
+  </footer>
+
+  <script src="./assets/js/script.js"></script>
+</body>
+
 </html>
