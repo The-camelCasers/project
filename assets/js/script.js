@@ -43,9 +43,9 @@ function displayResults(results) {
     const arrayTerm = outcomeDescription[index];
     */
   if (isRaining === true) {
-    document.getElementById("results").innerHTML = `<div> The current weather is : ${results.description} You need an umbrella!</div>`;
+    document.getElementById("results").innerHTML = `<div class="js-text"> The current weather is : ${results.description} You need an umbrella!</div>`;
   } else {
-    document.getElementById("results").innerHTML = `<div> The current weather is : ${results.description} You do not need an umbrella!</div>`;
+    document.getElementById("results").innerHTML = `<div class="js-text"> The current weather is : ${results.description} You do not need an umbrella!</div>`;
   }
   getGif(results.description);
 }
@@ -61,7 +61,8 @@ function getGif(searchTerm) {
       console.log(data);
       var randomObj = data.data[Math.floor(Math.random() * data.data.length)];
       console.log(randomObj);
-      document.getElementById("weatherGif").innerHTML = `<img src="${randomObj.images.downsized.url}">`;
+      //document.getElementById("weatherGif").innerHTML = `<img src="${randomObj.images.downsized.url}">`;
+      document.getElementById("gifBkg").style.backgroundImage = `url("${randomObj.images.downsized.url}")`;
     });
 }
 
