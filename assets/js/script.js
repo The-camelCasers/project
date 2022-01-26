@@ -1,47 +1,9 @@
 // global variables
-const thunderStormDescription = [
-  "Thunderstorm",
-  "thunderstorm with light rain",
-  "thunderstorm with rain",
-  "thunderstorm with heavy rain",
-  "light thunderstorm",
-  "thunderstorm",
-  "heavy thunderstorm",
-  "ragged thunderstorm",
-  "thunderstorm with light drizzle",
-  "thunderstorm with drizzle",
-  "thunderstorm with heavy drizzle",
-];
-const drizzleDescription = [
-  "Drizzle",
-  "light intensity drizzle",
-  "drizzle",
-  "heavy intensity drizzle",
-  "light intensity drizzle rain",
-  "drizzle rain",
-  "heavy intensity drizzle rain",
-  "shower rain and drizzle",
-  "heavy shower rain and drizzle",
-  "shower drizzle",
-];
-const rainDescription = [
-  "Rain",
-  "light rain",
-  "moderate rain",
-  "heavy intensity rain",
-  "very heavy rain",
-  "extreme rain",
-  "freezing rain",
-  "light intensity shower rain",
-  "shower rain",
-  "heavy intensity shower rain",
-  "ragged shower rain",
-];
+const thunderStormDescription = ["Thunderstorm", "thunderstorm with light rain", "thunderstorm with rain", "thunderstorm with heavy rain", "light thunderstorm", "thunderstorm", "heavy thunderstorm", "ragged thunderstorm", "thunderstorm with light drizzle", "thunderstorm with drizzle", "thunderstorm with heavy drizzle"];
+const drizzleDescription = ["Drizzle", "light intensity drizzle", "drizzle", "heavy intensity drizzle", "light intensity drizzle rain", "drizzle rain", "heavy intensity drizzle rain", "shower rain and drizzle", "heavy shower rain and drizzle", "shower drizzle"];
+const rainDescription = ["Rain", "light rain", "moderate rain", "heavy intensity rain", "very heavy rain", "extreme rain", "freezing rain", "light intensity shower rain", "shower rain", "heavy intensity shower rain", "ragged shower rain"];
 
-const outcomeDescription = thunderStormDescription.concat(
-  drizzleDescription,
-  rainDescription
-);
+const outcomeDescription = thunderStormDescription.concat(drizzleDescription, rainDescription);
 
 // create form where user inputs zipcode
 // Button for zipcode input
@@ -81,20 +43,16 @@ function displayResults(results) {
     const arrayTerm = outcomeDescription[index];
     */
   if (isRaining === true) {
-    document.getElementById(
-      "results"
-    ).innerHTML = `<div> The current weather is : ${results.description} You need an umbrella!</div>`;
+    document.getElementById("results").innerHTML = `<div> The current weather is : ${results.description} You need an umbrella!</div>`;
   } else {
-    document.getElementById(
-      "results"
-    ).innerHTML = `<div> The current weather is : ${results.description} You do not need an umbrella!</div>`;
+    document.getElementById("results").innerHTML = `<div> The current weather is : ${results.description} You do not need an umbrella!</div>`;
   }
-  getGif();
+  getGif(results.description);
 }
 
 // Giphy API
-function getGif() {
-  const fetchUrl = `http://api.giphy.com/v1/gifs/search?api_key=mEZ23vb42atGwQvVFV5MzgHdLaT0TrKX&q=rain`;
+function getGif(searchTerm) {
+  const fetchUrl = `http://api.giphy.com/v1/gifs/search?api_key=mEZ23vb42atGwQvVFV5MzgHdLaT0TrKX&q=${searchTerm}`;
   fetch(fetchUrl)
     .then(function (response) {
       return response.json();
@@ -103,9 +61,7 @@ function getGif() {
       console.log(data);
       var randomObj = data.data[Math.floor(Math.random() * data.data.length)];
       console.log(randomObj);
-      document.getElementById(
-        "weatherGif"
-      ).innerHTML = `<img src="${randomObj.images.downsized.url}">`;
+      document.getElementById("weatherGif").innerHTML = `<img src="${randomObj.images.downsized.url}">`;
     });
 }
 
