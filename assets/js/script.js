@@ -10,17 +10,13 @@ const outcomeDescription = thunderStormDescription.concat(drizzleDescription, ra
 
 const submitBtn = document.getElementById("zipCodeBtn");
 
-// functions
 function handleResults(event) {
   event.preventDefault();
-  console.log("push button pushed");
   // grab search text from input
   const zipInput = document.getElementById("searchZip").value;
 
   // create fecth url
   const fetchUrl = `http://api.openweathermap.org/data/2.5/weather?zip=${zipInput}&appid=0d38177c0e5e9ab3a9ccc614eb4acbe3`;
-
-  console.log("maybe you need an umbrella");
 
   fetch(fetchUrl)
     .then(function (response) {
@@ -29,8 +25,15 @@ function handleResults(event) {
     })
     .then(function (data) {
       console.log(data);
-      console.log(data.weather[0]);
-      displayResults(data.weather[0]);
+      //if received a 404 error message for city not found
+      if (data.cod === "404") {
+        //call displayError function
+        displayError();
+      } else {
+        //if no error message, call displayResults function
+        console.log(data.weather[0]);
+        displayResults(data.weather[0]);
+      }
     });
 }
 
@@ -48,6 +51,17 @@ function displayResults(results) {
     document.getElementById("results").innerHTML = `<div class="js-text"> The current weather is : ${results.description}! <br> You do not need an umbrella!</div>`;
   }
   getGif(results.description);
+}
+
+function displayError() {
+  // clear existing string
+  document.getElementById("results").innerHTML = "";
+  //clear existing background image
+  document.getElementById("gifBkg").style.backgroundImage = "";
+  //call getGif function
+  getGif("error");
+  //display error response
+  document.getElementById("results").innerHTML = `<div class="js-text"> Please enter a valid zip code.`;
 }
 
 // Giphy API
