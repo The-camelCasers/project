@@ -5,7 +5,65 @@ const rainDescription = ["Rain", "light rain", "moderate rain", "heavy intensity
 const outcomeDescription = thunderStormDescription.concat(drizzleDescription, rainDescription);
 const submitBtn = document.getElementById("zipCodeBtn");
 
+// initial state - geolocation to load page with weather/umbrella message and gif for current position
+geoLocation();
+
 // functions
+
+// geolocation - get user's current location
+function geoLocation() {
+  // clear existing string
+  document.getElementById("results").innerHTML = "";
+  // options object with parameters to use in method getCurrentPosition
+  const options = {
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0,
+  };
+
+  // callback function if geolocation.getCurrentPosition is a success and provides pos object
+  function success(pos) {
+    // variable for coordinates
+    const coordinates = pos.coords;
+    // variables for latitude and longitude from coordinates
+    const currentLat = coordinates.latitude;
+    const currentLong = coordinates.longitude;
+    // call handleResultsLatLong
+    handleResultsLatLong(currentLat, currentLong);
+  }
+
+  // if user blocks geolocation, console warn the block and return
+  function error(err) {
+    console.warn(`ERROR(${err.code}): ${err.message}`);
+    return;
+  }
+  // getCurrentPosition method
+  navigator.geolocation.getCurrentPosition(success, error, options);
+}
+
+// handleResultsLatLong
+function handleResultsLatLong(lat, long) {
+  // create fecth url
+  const fetchUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=0d38177c0e5e9ab3a9ccc614eb4acbe3`;
+  // fetch
+  fetch(fetchUrl)
+    .then(function (response) {
+      console.log();
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      // if received a 404 error message for city not found
+      if (data.cod === "404") {
+        // call displayError function
+        displayError();
+      } else {
+        // if no error message, call displayResults function and send weather description
+        console.log(data.weather[0]);
+        displayResults(data.weather[0]);
+      }
+    });
+}
 
 // handleResults
 function handleResults(event) {
