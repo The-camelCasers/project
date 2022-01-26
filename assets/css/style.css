@@ -25,12 +25,15 @@ footer {
 }
 
 header {
-  background-color: rgb(14, 14, 88);
+  background-color: #334a68;
+  font-size: 40px;
   color: white;
   margin: 0;
-  padding: 2px;
+  padding: 2rem;
   width: 100%;
   text-align: center;
+  position: fixed;
+  top: 0%;
 }
 
 input {
@@ -74,6 +77,9 @@ input:hover {
 .js-text {
   color: white;
   font-size: 30px;
+  border-radius: 8px;
+  background-color: #334a6888;
+  padding: 1rem;
 }
 
 .form-div {
@@ -94,3 +100,76 @@ input:hover {
   justify-content: center;
 }
 /* media query */
+/*footer*/
+.col_white_amrc {
+  color: #fff;
+  text-align: center;
+}
+
+h5 {
+  font-size: 20px;
+}
+
+footer {
+  background-color: #334a68;
+}
+
+.card {
+  width: 15%;
+  border-radius: 8px;
+}
+
+.card:hover {
+  box-shadow: 0px 0px 10px rgb(231, 231, 231);
+  transition: 0.4s;
+}
+
+img {
+  border-radius: 8px;
+  width: 40px;
+}
+
+.displayGrid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.cardColor {
+  background-color: aqua;
+}
+
+.pbox {
+  padding: 1rem;
+  margin: auto;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+li {
+  display: inline;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.fbd {
+  display: flex;
+}
+
+/* media queries */
+@media screen and (max-width: 600px) {
+  .miw-100\@sml {
+    min-width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .miw-50\@lrg {
+    min-width: 50%;
+  }
+}
