@@ -2,10 +2,11 @@
 
 ## Description
 
-"Do You Need An Umbrella" is a simple weather application. This app runs in the browser and features dynamically updated HTML and CSS powered by JavaScript. Two APIs are utilized in this website:
+"Do You Need An Umbrella" is a simple weather application. This app runs in the browser and features dynamically updated HTML and CSS powered by JavaScript. Three APIs are utilized in this website:
 
 - [OpenWeatherMap.org](https://openweathermap.org/api)
 - [developers.giphy.com](https://developers.giphy.com/)
+- [Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API)
 
 When the site is opened, the user is presented with the header "Do You Need an Umbrella?". In the center of the screen is an input box with text "Enter yo zipcode", with a search button below. When the user enters a zip code and clicks the "Search" button, the current weather is displayed, along with whether or not the user needs an umbrella. A randomly picked gif in the theme of the current weather is displayed as the background image. If the zipcode box is left blank, or if a valid zip code is not entered, text will display asking the user to "Please enter a valid zip code.", and a randomly picked "error" gif will display as the background.
 
