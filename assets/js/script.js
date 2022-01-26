@@ -15,26 +15,31 @@ function handleResults(event) {
   // grab search text from input
   const zipInput = document.getElementById("searchZip").value;
 
-  // create fecth url
-  const fetchUrl = `http://api.openweathermap.org/data/2.5/weather?zip=${zipInput}&appid=0d38177c0e5e9ab3a9ccc614eb4acbe3`;
+  //if input box is blank, call displayError function
+  if (zipInput === "") {
+    displayError();
+  } else {
+    // create fecth url
+    const fetchUrl = `http://api.openweathermap.org/data/2.5/weather?zip=${zipInput}&appid=0d38177c0e5e9ab3a9ccc614eb4acbe3`;
 
-  fetch(fetchUrl)
-    .then(function (response) {
-      console.log();
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data);
-      //if received a 404 error message for city not found
-      if (data.cod === "404") {
-        //call displayError function
-        displayError();
-      } else {
-        //if no error message, call displayResults function
-        console.log(data.weather[0]);
-        displayResults(data.weather[0]);
-      }
-    });
+    fetch(fetchUrl)
+      .then(function (response) {
+        console.log();
+        return response.json();
+      })
+      .then(function (data) {
+        console.log(data);
+        //if received a 404 error message for city not found
+        if (data.cod === "404") {
+          //call displayError function
+          displayError();
+        } else {
+          //if no error message, call displayResults function
+          console.log(data.weather[0]);
+          displayResults(data.weather[0]);
+        }
+      });
+  }
 }
 
 function displayResults(results) {
