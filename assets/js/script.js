@@ -43,9 +43,9 @@ function displayResults(results) {
     const arrayTerm = outcomeDescription[index];
     */
   if (isRaining === true) {
-    document.getElementById("results").innerHTML = `<div class="js-text"> The current weather is : ${results.description} You need an umbrella!</div>`;
+    document.getElementById("results").innerHTML = `<div class="js-text"> The current weather is : ${results.description}! <br> You need an umbrella!</div>`;
   } else {
-    document.getElementById("results").innerHTML = `<div class="js-text"> The current weather is : ${results.description} You do not need an umbrella!</div>`;
+    document.getElementById("results").innerHTML = `<div class="js-text"> The current weather is : ${results.description}! <br> You do not need an umbrella!</div>`;
   }
   getGif(results.description);
 }
