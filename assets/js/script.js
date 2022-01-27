@@ -106,10 +106,10 @@ function displayResults(results) {
   //  if isRaining is true
   if (isRaining === true) {
     // create div and display current weather and that the user needs an umbrella
-    document.getElementById("results").innerHTML = `<div class="js-text"> The current weather is : ${results.description}! <br> You need an umbrella!</div>`;
+    document.getElementById("results").innerHTML = `<div class="js-text fs-15@sm"> The current weather is : ${results.description}! <br> You need an umbrella!</div>`;
   } else {
     // if isRaining is false, create div and display current weather and that the user does not need an umbrella
-    document.getElementById("results").innerHTML = `<div class="js-text"> The current weather is : ${results.description}! <br> You do not need an umbrella!</div>`;
+    document.getElementById("results").innerHTML = `<div class="js-text fs-15@sm"> The current weather is : ${results.description}! <br> You do not need an umbrella!</div>`;
   }
   // call getGif function and send it the weather description
   getGif(results.description);
@@ -124,7 +124,7 @@ function displayError() {
   // call getGif function and send it "error"
   getGif("error");
   // display error response
-  document.getElementById("results").innerHTML = `<div class="js-text"> Please enter a valid zip code.`;
+  document.getElementById("results").innerHTML = `<div class="js-text fs-15@sm"> Please enter a valid zip code.`;
 }
 
 // Giphy API
