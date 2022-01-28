@@ -32,9 +32,8 @@ function geoLocation() {
     handleResultsLatLong(currentLat, currentLong);
   }
 
-  // if user blocks geolocation, console warn the block and return
-  function error(err) {
-    console.warn(`ERROR(${err.code}): ${err.message}`);
+  // if user blocks geolocation, return
+  function error() {
     return;
   }
   // getCurrentPosition method
@@ -48,18 +47,15 @@ function handleResultsLatLong(lat, long) {
   // fetch
   fetch(fetchUrl)
     .then(function (response) {
-      console.log();
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
       // if received a 404 error message for city not found
       if (data.cod === "404") {
         // call displayError function
         displayError();
       } else {
         // if no error message, call displayResults function and send weather description
-        console.log(data.weather[0]);
         displayResults(data.weather[0]);
       }
     });
@@ -79,18 +75,15 @@ function handleResults(event) {
     // fetch
     fetch(fetchUrl)
       .then(function (response) {
-        console.log();
         return response.json();
       })
       .then(function (data) {
-        console.log(data);
         // if received a 404 error message for city not found
         if (data.cod === "404") {
           // call displayError function
           displayError();
         } else {
           // if no error message, call displayResults function and send weather description
-          console.log(data.weather[0]);
           displayResults(data.weather[0]);
         }
       });
@@ -137,10 +130,8 @@ function getGif(searchTerm) {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
       // variable of a random object from array of objects
       var randomObj = data.data[Math.floor(Math.random() * data.data.length)];
-      console.log(randomObj);
       // display gif as the background
       document.getElementById("gifBkg").style.backgroundImage = `url("${randomObj.images.downsized.url}")`;
     });
