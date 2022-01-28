@@ -75,7 +75,7 @@ ul {
 /* specific classes */
 
 .card {
-  width: 15%;
+  padding: 1rem;
   border-radius: 8px;
 }
 
