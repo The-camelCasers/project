@@ -159,6 +159,11 @@ ul {
   transition: ease-in-out 0.5s;
 }
 
+.tdu {
+  color: blue;
+  text-decoration: underline;
+}
+
 /* media queries */
 @media screen and (max-width: 600px) {
   .miw-100\@sml {
